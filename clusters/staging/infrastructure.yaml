@@ -24,6 +24,8 @@ spec:
   interval: 1h
   retryInterval: 2m
   timeout: 5m
+  dependsOn:
+    - name: infra-crds
   path: ./infrastructure/controllers
   prune: true
   wait: false
