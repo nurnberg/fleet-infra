@@ -7,7 +7,7 @@ spec:
   interval: 24h
   url: https://github.com/kubernetes-sigs/gateway-api
   ref:
-    tag: v0.8.1
+    tag: v1.1.0
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -16,7 +16,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  path: ./config/crd/experimental
+  path: ./config/crd/standard
   prune: false
   wait: false
   sourceRef:
