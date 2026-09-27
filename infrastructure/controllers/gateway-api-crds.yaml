@@ -16,7 +16,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  path: ./config/crd/standard
+  path: ./config/crd/experimental
   prune: false
   wait: false
   sourceRef:
