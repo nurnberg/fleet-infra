@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 24h
-  url: https://guthub.com/cloudnative-pg/cloudnative-pg
+  url: https://github.com/cloudnative-pg/cloudnative-pg
   ref:
     branch: release-1.28
 ---
