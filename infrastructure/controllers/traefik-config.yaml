@@ -20,7 +20,7 @@ spec:
       namespacePolicy: All
       listeners:
         web:
-          port: 80
+          port: 8080
           protocol: HTTP
           namespacePolicy:
             from: All
