@@ -7,20 +7,9 @@ spec:
   valuesContent: |-
     providers:
       kubernetesIngress:
-        enabled: false
+        enabled: true
       kubernetesGateway:
         enabled: true
+        experimentalChannel: true
     gateway:
-      enabled: true
-      namespacePolicy: All
-      listeners:
-        web:
-          port: 80
-          protocol: HTTP
-          namespacePolicy:
-            from: All
-          # tls:
-          #   enabled: true
-          #   options:
-          #     default:
-          #       minVersion: VersionTLS12
+      enabled: false
