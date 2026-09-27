@@ -4,6 +4,7 @@ metadata:
   name: traefik
   namespace: kube-system
 spec:
+  interval: 1h
   chart:
     spec:
       chart: traefik
