@@ -4,3 +4,4 @@ resources:
   - traefik-source.yaml
   - traefik-release.yaml
   # - cert-manager.yaml
+  - cnpg-source.yaml
