@@ -10,8 +10,12 @@ spec:
         enabled: true
       kubernetesGateway:
         enabled: true
+    gatewayClass:
+      enabled: true
+      name: traefik
     gateway:
       enabled: true
+      name: traefik-gateway
       namespacePolicy: All
       listeners:
         web:
