@@ -7,7 +7,7 @@ spec:
   interval: 24h
   url: https://guthub.com/cloudnative-pg/cloudnative-pg
   ref:
-    branch; release-1.28
+    branch: release-1.28
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
