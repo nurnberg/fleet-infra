@@ -18,6 +18,7 @@ spec:
   interval: 1h
   path: ./config/crd/standard
   prune: false
+  wait: false
   sourceRef:
     kind: GitRepository
     name: gateway-api-crds
