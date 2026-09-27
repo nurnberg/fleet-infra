@@ -12,3 +12,15 @@ spec:
         kind: HelmRepository
         name: traefik
         namespace: flux-system
+  dependsOn:
+    - name: gateway-api-crds
+      namespace: flux-system
+  values:
+    providers:
+      kubernetesIngress:
+        enabled: true
+      kubernetesGateway:
+        enabled: true
+    gateway:
+      enabled: true
+      namespacePolicy: All
