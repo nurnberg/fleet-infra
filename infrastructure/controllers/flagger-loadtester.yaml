@@ -24,5 +24,6 @@ spec:
   sourceRef:
     kind: OCIRepository
     name: flagger-loadtester
+    namespace: flux-system
   path: ./tester
   targetNamespace: kube-system
