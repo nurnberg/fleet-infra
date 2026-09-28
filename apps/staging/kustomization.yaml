@@ -3,8 +3,8 @@ kind: Kustomization
 resources:
   - ../base/podinfo
   - podinfo-canary.yaml
-  - podinfo-patches.yaml
 patches:
   - path: podinfo-values.yaml
     target:
       kind: HelmRelease
+  - path: podinfo-patches.yaml
