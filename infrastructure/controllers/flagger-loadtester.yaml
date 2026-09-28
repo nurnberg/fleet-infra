@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: loadtester
-          image: ghcr.io/fluxcd/flagger-loadtester:v0.22.0
+          image: ghcr.io/fluxcd/flagger-loadtester:0.22.0
           ports:
             - containerPort: 8080
 ---
