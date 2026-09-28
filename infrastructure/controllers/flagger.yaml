@@ -27,4 +27,4 @@ spec:
       namespace: monitoring
   values:
     meshProvider: "gatewayapi:v1"
-    metricsServer: "http://cluster.local"
+    metricsServer: "http://prometheus-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090"

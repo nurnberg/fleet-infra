@@ -4,6 +4,7 @@ resources:
   - traefik-source.yaml
   - traefik-release.yaml
   - flagger.yaml
+  - flagger-loadtester.yaml
   # - cert-manager.yaml
   - cnpg-source.yaml
   - cnpg-release.yaml
