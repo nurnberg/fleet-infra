@@ -1,31 +1,28 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
 metadata:
   name: flagger-loadtester
   namespace: kube-system
 spec:
-  selector:
-    matchLabels:
-      app: flagger-loadtester
-  template:
-    metadata:
-      labels:
-        app: flagger-loadtester
-    spec:
-      containers:
-        - name: loadtester
-          image: ghcr.io/fluxcd/flagger-loadtester:0.22.0
-          ports:
-            - containerPort: 8080
+  interval: 2h
+  url: oci://ghcr.io/fluxcd/flagger-manifests
+  ref:
+    semver: 1.x
+  verify:
+    provider: cosign
 ---
-apiVersion: v1
-kind: Service
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
 metadata:
   name: flagger-loadtester
   namespace: kube-system
 spec:
-  ports:
-    - port: 80
-      targetPort: 8080
-  selector:
-    app: flagger-loadtester
+  interval: 2h
+  wait: true
+  timeout: 5m
+  prune: true
+  sourceRef:
+    kind: OCIRepository
+    name: flagger-loadtester
+  path: ./tester
+  targetNamespace: kube-system

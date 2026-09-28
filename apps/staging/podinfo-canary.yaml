@@ -28,7 +28,7 @@ spec:
     # webhooks:
     #   - name: acceptance-test
     #     type: pre-rollout
-    #     url: http://flagger-loadtester.kube-system:8080
+    #     url: http://flagger-loadtester.kube-system
     #     timeout: 15s
     #     metadata:
     #       type: bash
