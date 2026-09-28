@@ -7,3 +7,5 @@ resources:
   # - cert-manager.yaml
   - cnpg-source.yaml
   - cnpg-release.yaml
+  - prometheus-source.yaml
+  - prometheus-release.yaml
