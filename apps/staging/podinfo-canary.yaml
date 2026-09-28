@@ -1,0 +1,36 @@
+apiVersion: flagger.app/v1beta1
+kind: Canary
+metadata:
+  name: podinfo
+  namespace: podinfo
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: podinfo
+  service:
+    port: 9898
+    gatewayRefs:
+      - name: traefik-gateway
+        namespace: kube-system
+    hosts:
+      - podinfo.staging.localhost
+  analysis:
+    interval: 10s
+    threshold: 5
+    maxWeight: 50
+    stepWeight: 10
+    metrics:
+      - name: request-success-rate
+        thresholdRange:
+          min: 99
+        interval: 1m
+    webhooks:
+      - name: acceptance-test
+        type: pre-rollout
+        url: http://flagger-loadtester.kube-system
+        //url: http://flagger-loadtester.flagger.svc.cluster.local/validate?url=http://podinfo.staging.localhost:9898/healthz
+        timeout: 5s
+        metadata:
+          type: bash
+          cmd: "curl -sd 'test' http://podinfo-canary.podinfo | grep token"
