@@ -20,11 +20,11 @@ spec:
     threshold: 5
     maxWeight: 50
     stepWeight: 10
-    metrics:
-      - name: request-success-rate
-        thresholdRange:
-          min: 99
-        interval: 1m
+    metrics: []
+      # - name: request-success-rate
+      #   thresholdRange:
+      #     min: 99
+      #   interval: 1m
     # webhooks:
     #   - name: acceptance-test
     #     type: pre-rollout
