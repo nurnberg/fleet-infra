@@ -12,7 +12,7 @@ spec:
   values:
     replicaCount: 1
     redis:
-      enabled: true
+      enabled: false
     httpRoute:
       hostnames:
         - podinfo.staging.localhost
