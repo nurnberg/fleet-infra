@@ -3,7 +3,8 @@ kind: Kustomization
 resources:
   - traefik-source.yaml
   - traefik-release.yaml
-  - flagger.yaml
+  - flagger-source.yaml
+  - flagger-release.yaml
   - flagger-loadtester.yaml
   # - cert-manager.yaml
   - cnpg-source.yaml

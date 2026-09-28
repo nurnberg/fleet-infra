@@ -1,12 +1,3 @@
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: flagger
-  namespace: flux-system
-spec:
-  interval: 2h
-  url: https://flagger.app
----
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
@@ -28,3 +19,4 @@ spec:
   values:
     meshProvider: "gatewayapi:v1"
     metricsServer: "http://prometheus-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090"
+    namespace: ""
