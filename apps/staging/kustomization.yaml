@@ -8,3 +8,5 @@ patches:
     target:
       kind: HelmRelease
   - path: podinfo-patches.yaml
+    target:
+      kind: HelmRelease
