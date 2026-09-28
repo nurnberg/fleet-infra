@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../base/podinfo
   - podinfo-canary.yaml
+  - podinfo-patches.yaml
 patches:
   - path: podinfo-values.yaml
     target:
