@@ -12,4 +12,4 @@ spec:
       name: traefik-gateway
       namespace: kube-system
     ui:
-      color: "#995000"
+      color: "#112233"
