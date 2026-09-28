@@ -16,7 +16,7 @@ spec:
         - name: loadtester
           image: ghcr.io/fluxcd/flagger-loadtester:v0.22.0
           ports:
-            - containerPort: 80
+            - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
