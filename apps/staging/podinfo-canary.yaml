@@ -29,7 +29,6 @@ spec:
       - name: acceptance-test
         type: pre-rollout
         url: http://flagger-loadtester.kube-system
-        //url: http://flagger-loadtester.flagger.svc.cluster.local/validate?url=http://podinfo.staging.localhost:9898/healthz
         timeout: 5s
         metadata:
           type: bash
