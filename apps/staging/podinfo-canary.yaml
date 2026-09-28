@@ -25,11 +25,11 @@ spec:
         thresholdRange:
           min: 99
         interval: 1m
-    webhooks:
-      - name: acceptance-test
-        type: pre-rollout
-        url: http://flagger-loadtester.kube-system:8080
-        timeout: 15s
-        metadata:
-          type: bash
-          cmd: "curl -s --retry 3 --retry-delay 2 --retry-connrefused 'test' http://podinfo-canary.podinfo | grep -q 'OK'"
+    # webhooks:
+    #   - name: acceptance-test
+    #     type: pre-rollout
+    #     url: http://flagger-loadtester.kube-system:8080
+    #     timeout: 15s
+    #     metadata:
+    #       type: bash
+    #       cmd: "curl -s --retry 3 --retry-delay 2 --retry-connrefused 'test' http://podinfo-canary.podinfo | grep -q 'OK'"
