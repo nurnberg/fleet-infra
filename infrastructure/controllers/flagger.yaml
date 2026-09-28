@@ -22,6 +22,9 @@ spec:
         kind: HelmRepository
         name: flagger
         namespace: flux-system
+  dependsOn:
+    - name: prometheus
+      namespace: monitoring
   values:
     meshProvider: "gatewayapi:v1"
-    metricsServer: "prometheus"
+    metricsServer: "http://cluster.local"
