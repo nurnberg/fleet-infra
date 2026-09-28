@@ -30,3 +30,19 @@ spec:
         - name: my-app-service # Your standard K8s ClusterIP Service name
           port: 80             # The port exposed on that Service resource
 ```
+
+Master Clear:
+```sh
+# 1. Hard-delete the stuck Canary object to completely wipe Flagger's failure history
+kubectl delete canary podinfo -n podinfo
+
+# 2. Restart the loadtester pod to guarantee its web server hooks into port 8080 cleanly
+kubectl rollout restart deployment flagger-loadtester -n kube-system
+
+# 3. Wait a few seconds for the pod to shift to a stable "Running" state
+kubectl rollout status deployment flagger-loadtester -n kube-system
+
+# 4. Tell Flux to instantly re-hydrate the clean, updated Canary definitions
+flux reconcile source git flux-system
+flux reconcile kustomization apps
+```
