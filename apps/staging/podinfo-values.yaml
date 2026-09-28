@@ -10,6 +10,9 @@ spec:
   test:
     enable: false
   values:
+    replicaCount: 1
+    redis:
+      enabled: true
     httpRoute:
       hostnames:
         - podinfo.staging.localhost

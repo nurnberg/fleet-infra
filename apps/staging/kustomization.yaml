@@ -7,6 +7,6 @@ patches:
   - path: podinfo-values.yaml
     target:
       kind: HelmRelease
-  - path: podinfo-patch.yaml
+  - path: podinfo-patches.yaml
     target:
       kind: HelmRelease
